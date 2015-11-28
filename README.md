@@ -66,6 +66,37 @@ djangochina_socket.xml，将它放在 /home/work/src/sites/testdjango1/testdjang
 
 这样，我们就配置好uWSGI了。
 
+配置nginx
+server {
+  listen       80;
+  server_name  www.xxx.cn xxx.cn;
+  charset      utf-8;
+
+  client_max_body_size 75M;
+
+  access_log /var/gl/logs/access.log;
+  error_log /var/gl/logs/error.log;
+  location /diy/ {
+        include        uwsgi_params;
+        uwsgi_pass     127.0.0.1:8077;
+  }
+  error_page   500 502 503 504  /50x.html;
+  location = /50x.html {
+        root   html;
+  }
+  location /static/ {
+        alias  /usr/opt/gl/geeklogistics/static/;
+        index  index.html index.htm;
+  }
+
+  location /media/ {
+        alias  /usr/opt/gl/geeklogistics/media/;
+  }
+}
+
+
+
+
 
 
 
