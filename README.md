@@ -2,6 +2,7 @@
 
 ### 0,install libs
 yum install libxml*
+
 pip install uwsgi
 
 ### 1,在你的机器上写一个test.py
