@@ -1,14 +1,16 @@
-# CentosDjangoNginxUwsgi
+# centos django nginx uwsgi
 
-
+### 0,install libs
 yum install libxml*
-1,pip install uwsgi
-2,在你的机器上写一个test.py
+pip install uwsgi
 
+### 1,在你的机器上写一个test.py
+```Python
 # test.py
 def application(env, start_response):
     start_response('200 OK', [('Content-Type','text/html')])
     return "Hello World"
+```
 
 然后执行shell命令：
 uwsgi --http :8001 --wsgi-file test.py
