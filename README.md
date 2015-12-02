@@ -87,12 +87,12 @@ server {
         root   html;
   }
   location /static/ {
-        alias  /usr/opt/gl/geeklogistics/static/;
+        alias  /usr/opt/gl/xxx/static/;
         index  index.html index.htm;
   }
 
   location /media/ {
-        alias  /usr/opt/gl/geeklogistics/media/;
+        alias  /usr/opt/gl/xxx/media/;
   }
 }
 ```
